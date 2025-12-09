@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta property="og:title" content="Sheetz Is the Greatest Gas Station Ever" />
+    <meta property="og:description" content="A retro 90s-style homage to the legendary Sheetz." />
+    <meta property="og:image" content="https://sheetzmybeloved.xyz/logo.png" />
+    <meta property="og:url" content="https://sheetzmybeloved.xyz" />
+    <meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8">
   <title>Sheetz My Beloved</title>
   <style>
@@ -61,10 +66,29 @@
   </style>
 </head>
 <body>
+<script>
+    const path = window.location.pathname.slice(1);
+    const redirects = {
+        "kygroomer25": "https://docs.google.com/document/d/1jgjtglxjGGCG0WQceNyqBGogKFoYb78kTukL8qUavf0/edit?tab=t.0"
+    };
+    if (path && redirects[path]) {
+        document.body.innerHTML = `
+        <div style="text-align:center; font-family:'Comic Sans MS', sans-serif; margin-top:50px;">
+            <h1 style="color:red; text-shadow:2px 2px yellow;">Redirecting...</h1>
+            <img src="https://media.discordapp.net/attachments/1374220520131919972/1447630409692221440/image.png?ex=6938fb21&is=6937a9a1&hm=2ebf611ce43cab3c746703aff4864ef3af33f7b8814a8fc285a9bf071ba2d6b7&=&format=webp&quality=lossless&width=697&height=748" 
+                 style="width:300px; border:5px ridge magenta;">
+            <p style="font-size:20px; color:blue;">Please wait while we take you to the document...</p>
+            <marquee behavior="alternate" scrollamount="10" style="font-size:18px; color:green;">
+                Sheetz My Beloved
+            </marquee>
+        </div>`;
+        setTimeout(() => { window.location.href = redirects[path]; }, 2500);
+    }
+</script>
   <div class="container">
     <div class="marquee"><span class="marquee-text">WELCOME TO THE OFFICIAL (UNOFFICIAL) SHEETZ FAN PAGE — THE GREATEST GAS STATION IN THE WORLD!!!</span></div>
 
-    <img src="https://cdn.prod.website-files.com/5dc45c3308e53a6384902d63/6307be072546432bcc9c04ac_PXL_20220825_172806930-p-3200.jpg" alt="Sheetz Edinboro, PA" style="width:100%; border:5px solid #ff0000; margin-bottom:20px;">
+    <img src="https://cdn.prod.website-files.com/5dc45c3308e53a6384902d63/6307be072546432bcc9c04ac_PXL_20220825_172806930-p-3200.jpg" alt="Sheetz in Edinboro, PA" style="width:100%; border:5px solid #ff0000; margin-bottom:20px;">
 
 <h1>SHEETZ: <span class="blink">MY BELOVED</span></h1>
 
