@@ -6,8 +6,11 @@
 </head>
 <body>
 <script>
-    window.location.href = "https://drive.google.com/drive/folders/1Zs3WTI3d3ZiNolLRQptX2kroDp3yOSHG?usp=drive_link";
+    const path = window.location.pathname.replace(/\/$/, "");
+
+    if (path === "/kyawfulfellow") {
+        window.location.href = "https://drive.google.com/drive/folders/1Zs3WTI3d3ZiNolLRQptX2kroDp3yOSHG?usp=drive_link";
+    }
 </script>
 </body>
 </html>
-// I need more help
