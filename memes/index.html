@@ -33,22 +33,23 @@
 <div id="memeContainer"></div>
 
 <script>
-    // Array of media files (images and videos) in /images folder
+    
     const mediaFiles = [
         "image1.png",
         "image2.png",
         "image3.png",
         "video1.mp4",
-        "video2.mp4"
-        // Add more files as needed
+        "video2.mp4",
+        "video3.mp4",
+        
     ];
 
-    // Pick a random media file
+    
     const randomIndex = Math.floor(Math.random() * mediaFiles.length);
     const randomMedia = mediaFiles[randomIndex];
     const container = document.getElementById("memeContainer");
 
-    // Check file extension to decide whether to use <img> or <video>
+    
     if(randomMedia.match(/\.(mp4|webm|ogg)$/i)) {
         container.innerHTML = `<video controls autoplay muted loop>
                                     <source src="/images/${randomMedia}" type="video/mp4">
