@@ -1,34 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Redirecting...</title>
-</head>
+    <title>404 — Page Not Found</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+        }
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
 
+        /* Sheetz style for kyawfulfellow traffic */
+        .sheetz-404 {
+            background-color: #111;
+            color: #ffcc00;
+            font-family: 'Courier New', monospace;
+            padding-top: 50px;
+        }
+        .sheetz-404 h1 {
+            font-size: 70px;
+            color: #ff4444;
+            text-shadow: 3px 3px #00ffcc;
+        }
+        .sheetz-404 p {
+            color: #00ffcc;
+            font-size: 22px;
+        }
+        .sheetz-404 a {
+            color: #ff66ff;
+            font-weight: bold;
+        }
+        .sheetz-404 img {
+            width: 300px;
+            border: 5px ridge magenta;
+            margin: 20px 0;
+        }
+        .sheetz-404 hr {
+            border: 2px dashed #ff66ff;
+            width: 50%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
 <body>
 <script>
-    const path = window.location.pathname.slice(1);
-
-    const redirects = {
-        "kyawfulfellow": "https://docs.google.com/document/d/1jgjtglxjGGCG0WQceNyqBGogKFoYb78kTukL8qUavf0/edit?tab=t.0"
-    };
-
-    if (path && redirects[path]) {
+    // Detect traffic from /kyawfulfellow
+    if (window.location.pathname.startsWith("/kyawfulfellow")) {
+        // Replace the body with Sheetz-style 404
         document.body.innerHTML = `
-        <div style="text-align:center; font-family:'Comic Sans MS', sans-serif; margin-top:50px;">
-            <h1 style="color:red; text-shadow:2px 2px yellow;">Redirecting...</h1>
-            <img src="/images/image1.png"
-                 style="width:300px; border:5px ridge magenta;">
-            <p style="font-size:20px; color:blue;">Please wait while we take you to the document...</p>
-            <marquee behavior="alternate" scrollamount="10" style="font-size:18px; color:green;">
-                Sheetz My Beloved
-            </marquee>
-        </div>`;
-        setTimeout(() => { window.location.href = redirects[path]; }, 2500);
+            <div class="sheetz-404">
+                <h1>404</h1>
+                <hr>
+                <img src="/images/image1.png" alt="Sheer awesomeness">
+                <p>Sorry, the page you are looking for cannot be found.</p>
+                <p>Return to <a href="/">Home</a></p>
+                <hr>
+                <p>Welcome to the ultimate Sheetz tribute — even our 404s are legendary!</p>
+            </div>
+        `;
+
+        // Optional: Redirect to Google Drive instead
+        // window.location.href = "https://drive.google.com/your-link-here";
     } else {
+        // Normal 404 content for everyone else
         document.body.innerHTML = `
-            <h1 style="text-align:center;">404 — Page Not Found</h1>
-            <p style="text-align:center;">Return to <a href="/">Home</a></p>
+            <h1>404</h1>
+            <p>Sorry, the page you are looking for cannot be found.</p>
+            <p>Return to <a href="/">Home</a></p>
         `;
     }
 </script>
