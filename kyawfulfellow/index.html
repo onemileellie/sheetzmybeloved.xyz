@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Secret Redirect</title>
-  <meta http-equiv="refresh" content="5;url=https://docs.google.com/document/d/1jgjtglxjGGCG0WQceNyqBGogKFoYb78kTukL8qUavf0/edit?tab=t.0">
-  <style>
-    body {
-      background-color: #000;
-      color: #0f0;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      padding-top: 50px;
-    }
-    h1 {
-      color: #ff0;
-      text-shadow: 2px 2px #f00;
-      font-size: 48px;
-    }
-    p {
-      font-size: 18px;
-    }
-    img {
-      margin-top: 30px;
-      width: 300px;
-      border: 3px solid #ff0;
-      box-shadow: 0 0 10px #0f0;
-    }
-    marquee {
-      color: #0ff;
-      font-size: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+
+    <meta property="og:title" content="Sheetz Is the Greatest Gas Station Ever">
+    <meta property="og:description" content="A retro 90s-style homage to the legendary Sheetz.">
+    <meta property="og:image" content="https://sheetzmybeloved.xyz/logo.png">
+    <meta property="og:url" content="https://sheetzmybeloved.xyz">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body>
-  <h1>TOP SECRET SHEETZ ZONE</h1>
-  <marquee>Redirecting you to the hidden document...</marquee>
-  <p>If you are not redirected in 5 seconds, <a href="https://docs.google.com/document/d/1jgjtglxjGGCG0WQceNyqBGogKFoYb78kTukL8qUavf0/edit?tab=t.0" style="color:#ff0;">click here</a>.</p>
-  <img src="https://media.discordapp.net/attachments/1374220520131919972/1447630409692221440/image.png" alt="Secret Sheetz Image">
+<script>
+    const path = window.location.pathname.slice(1);
+
+    const redirects = {
+        "kygroomer25": "https://docs.google.com/document/d/REPLACE_THIS/edit"
+    };
+
+    if (path && redirects[path]) {
+        document.body.innerHTML = `
+        <div style="text-align:center; font-family:'Comic Sans MS', sans-serif; margin-top:50px;">
+            <h1 style="color:red; text-shadow:2px 2px yellow;">Redirecting...</h1>
+            <img src="https://media.discordapp.net/attachments/1374220520131919972/1447630409692221440/image.png?ex=6938fb21&is=6937a9a1&hm=2ebf611ce43cab3c746703aff4864ef3af33f7b8814a8fc285a9bf071ba2d6b7&=&format=webp&quality=lossless&width=697&height=748"
+                 style="width:300px; border:5px ridge magenta;">
+            <p style="font-size:20px; color:blue;">Please wait while we take you to the document...</p>
+            <marquee behavior="alternate" scrollamount="10" style="font-size:18px; color:green;">
+                Sheetz My Beloved
+            </marquee>
+        </div>`;
+        setTimeout(() => { window.location.href = redirects[path]; }, 2500);
+    } else {
+        document.body.innerHTML = `
+            <h1 style="text-align:center;">404 — Page Not Found</h1>
+            <p style="text-align:center;">Return to <a href="/">Home</a></p>
+        `;
+    }
+</script>
 </body>
 </html>
