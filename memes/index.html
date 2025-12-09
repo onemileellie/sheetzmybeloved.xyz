@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Meme Generator</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #000080;
+            padding: 40px;
+        }
+        h1 {
+            color: #ff4500;
+            text-shadow: 1px 1px #00ffff;
+        }
+        img, video {
+            max-width: 80%;
+            border: 5px ridge #ff1493;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        video {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Random Meme Generator</h1>
+<div id="memeContainer"></div>
+
+<script>
+    // Array of media files (images and videos) in /images folder
+    const mediaFiles = [
+        "image1.png",
+        "image2.png",
+        "image3.png",
+        "video1.mp4",
+        "video2.mp4"
+        // Add more files as needed
+    ];
+
+    // Pick a random media file
+    const randomIndex = Math.floor(Math.random() * mediaFiles.length);
+    const randomMedia = mediaFiles[randomIndex];
+    const container = document.getElementById("memeContainer");
+
+    // Check file extension to decide whether to use <img> or <video>
+    if(randomMedia.match(/\.(mp4|webm|ogg)$/i)) {
+        container.innerHTML = `<video controls autoplay muted loop>
+                                    <source src="/images/${randomMedia}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                               </video>`;
+    } else {
+        container.innerHTML = `<img src="/images/${randomMedia}" alt="Random Meme">`;
+    }
+</script>
+
+</body>
+</html>
