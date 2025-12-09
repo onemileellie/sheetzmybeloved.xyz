@@ -1,36 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
 </head>
-
 <body>
 <script>
-    const path = window.location.pathname.slice(1);
-
-    const redirects = {
-        "kyawfulfellow": "https://docs.google.com/document/d/1jgjtglxjGGCG0WQceNyqBGogKFoYb78kTukL8qUavf0/edit?tab=t.0"
-    };
-
-    if (path && redirects[path]) {
-        document.body.innerHTML = `
-        <div style="text-align:center; font-family:'Comic Sans MS', sans-serif; margin-top:50px;">
-            <h1 style="color:red; text-shadow:2px 2px yellow;">Redirecting...</h1>
-            <img src="/images/image1.png"
-                 style="width:300px; border:5px ridge magenta;">
-            <p style="font-size:20px; color:blue;">Please wait while we take you to the document...</p>
-            <marquee behavior="alternate" scrollamount="10" style="font-size:18px; color:green;">
-                Sheetz My Beloved
-            </marquee>
-        </div>`;
-        setTimeout(() => { window.location.href = redirects[path]; }, 2500);
-    } else {
-        document.body.innerHTML = `
-            <h1 style="text-align:center;">404 — Page Not Found</h1>
-            <p style="text-align:center;">Return to <a href="/">Home</a></p>
-        `;
-    }
+    // Redirect directly to 404.html
+    window.location.href = "404.html";
 </script>
 </body>
 </html>
